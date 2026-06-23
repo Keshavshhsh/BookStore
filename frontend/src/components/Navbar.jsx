@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import Login from "./Login";
 
 function Navbar() {
   const [theme,setTheme] = useState(localStorage.getItem("theme")?
@@ -112,8 +113,10 @@ ${sticky
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1">{navItems}</ul>
             </div>
-            <div className="hidden md:block">
-              <label className="input px-3 py-2 border rounded-md">
+            <div className="hidden md:block ">
+              <label className="input px-3 py-2 border 
+              dark:border-white
+              rounded-md dark:bg-slate-900 dark:text-white">
                 <svg
                   className="h-[1em] opacity-50"
                   xmlns="http://www.w3.org/2000/svg"
@@ -168,9 +171,13 @@ ${sticky
             </label>
 
             <div className="">
-              <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer">
+              <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer" 
+              onClick={()=>{
+                document.getElementById("my_modal_3").showModal();
+              }}>
                 Login
               </a>
+              <Login />
             </div>
           </div>
         </div>

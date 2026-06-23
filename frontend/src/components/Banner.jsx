@@ -1,5 +1,5 @@
 import React from "react";
-import banner from '../../public/Banner.jpg'
+import banner from "../../public/Banner.jpg";
 
 function Banner() {
   return (
@@ -17,40 +17,39 @@ function Banner() {
               deleniti, voluptate quisquam doloremque, cumque corporis
             </p>
 
-            <label className="input validator">
-            <svg
-              className="h-[1em] opacity-50"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                strokeWidth="2.5"
-                fill="none"
-                stroke="currentColor"
+            <label className="input validator
+            dark:bg-slate-900 dark:text-white dark:border-white
+            ">
+              <svg
+                className="h-[1em] opacity-50"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
               >
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </g>
-            </svg>
-            <input type="email" placeholder="mail@site.com" required />
-          </label>
+                <g
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeWidth="2.5"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </g>
+              </svg>
+              <input type="email" placeholder="mail@site.com" required
+              className="bg-white text-black dark:bg-slate-900 dark:text-white" />
+            </label>
 
-          <div className="validator-hint hidden">Enter valid email address</div>
-
+            <div className="validator-hint hidden ">
+              Enter valid email address
+            </div>
           </div>
 
           <button className="btn btn-secondary">Secondary</button>
-
-
-          
         </div>
 
-        <div className="order-1 w-full md:w-1/2"> 
-        <img src={banner} alt=""/>
-
-        
+        <div className="order-1 w-full md:w-1/2">
+          <img src={banner} alt="" />
         </div>
       </div>
     </>

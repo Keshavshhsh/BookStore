@@ -3,6 +3,8 @@ import "./index.css";
 import Home from "./home/Home";
 import Courses from "./courses/Courses";
 import {Route,Routes} from "react-router-dom";
+import Signup from "./components/Signup";
+import Login from "./components/Login"
 
 function App() {
   return (
@@ -13,6 +15,10 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/course" element={<Courses />} />
+
+        <Route path="/signup" element={<Signup />} />
+
+        <Route path="/login" element={<Login />} />
       </Routes>
 
     </div>
