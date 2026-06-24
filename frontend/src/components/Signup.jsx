@@ -1,7 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { useForm } from "react-hook-form"
+
 function Signup() {
+
+  const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm()
+  
+    const onSubmit = (data) => console.log(data)
+
   return (
     <>
       <div className="flex h-screen items-center justify-center ">
@@ -16,12 +27,16 @@ function Signup() {
   bg-white text-black dark:bg-slate-900 dark:text-white
   p-6 rounded-lg"
           >
-            <Link
+            <form onSubmit={handleSubmit(onSubmit)} method='dialog'>
+              <Link
               to="/"
               className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
             >
               ✕
             </Link>
+
+            
+            
 
             <h3 className="font-bold text-lg dark:bg-slate-900 dark:text-white">
               Signup
@@ -39,7 +54,14 @@ function Signup() {
                 className="w-80 px-3 py-1 border rounded-md
              bg-white text-black
              dark:bg-slate-800 dark:text-white dark:border-white"
+
+             {...register("name", { required: true })}
+
               />
+
+               <br/>
+
+             {errors.name && <span className="text-sm  text-red-500">This field is required</span>}
             </div>
 
             <div className="mt-4 space-y-2">
@@ -52,7 +74,13 @@ function Signup() {
                 className="w-80 px-3 py-1 border rounded-md
              bg-white text-black
              dark:bg-slate-800 dark:text-white dark:border-white"
+             {...register("email", { required: true })}
               />
+
+               <br/>
+
+             {errors.email && <span className="text-sm  text-red-500">This field is required</span>}
+
             </div>
 
             {/* {password} */}
@@ -67,7 +95,11 @@ function Signup() {
                 className="w-80 px-3 py-1 border rounded-md
              bg-white text-black
              dark:bg-slate-800 dark:text-white dark:border-white"
+             {...register("password", { required: true })}
               />
+               <br/>
+
+             {errors.password && <span className="text-sm  text-red-500">This field is required</span>}
             </div>
             {/* {Button} */}
 
@@ -76,13 +108,14 @@ function Signup() {
                 Signup
               </button>
 
-              <p>
+              <p >
                 Have account?{" "}
                 <Link to="/" className="underline text-blue-500 cursor-pointer">
                   Login
                 </Link>{" "}
               </p>
             </div>
+            </form>
           </div>
         </div>
       </div>

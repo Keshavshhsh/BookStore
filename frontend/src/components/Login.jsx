@@ -1,17 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form"
+
 
 function Login() {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data) => console.log(data)
+
+
+
   return (
     <div>
       <dialog id="my_modal_3" className="modal  ">
         <div className="modal-box bg-white text-black dark:bg-slate-900 dark:text-white">
-          <form method="dialog">
+          <form 
+          onSubmit={handleSubmit(onSubmit)}
+           method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
-          </form>
+         
           <h3 className="font-bold text-lg dark:bg-slate-900 dark:text-white">Login</h3>
 
           <div className="mt-4 space-y-2">
@@ -24,7 +39,11 @@ function Login() {
              className="w-80 px-3 py-1 border rounded-md
              bg-white text-black
              dark:bg-slate-800 dark:text-white dark:border-white"
+             {...register("email", { required: true })}
             />
+            <br/>
+
+             {errors.email && <span className="text-sm  text-red-500">This field is required</span>}
           </div>
 
           {/* {password} */}
@@ -42,7 +61,11 @@ function Login() {
              className="w-80 px-3 py-1 border rounded-md
              bg-white text-black
              dark:bg-slate-800 dark:text-white dark:border-white"
+
+             {...register("password", { required: true })}
             />
+            <br/>
+             {errors.password && <span className="text-sm  text-red-500" >This field is required</span>}
 
             
           </div>
@@ -61,7 +84,7 @@ function Login() {
 
 
 
-
+ </form>
 
         </div>
       </dialog>
