@@ -6,7 +6,8 @@ const Contact = () => {
   return (
     <>
     <Navbar/>
-    <div className="dark:bg-slate-900 dark:text-white dark:border">
+
+    <div className="dark:bg-slate-900 dark:text-white dark:border ">
 
       <div className="relative min-h-screen bg-gradient-to-r from-pink-100 via-purple-100 to-blue-100 overflow-hidden ">
         {/* Background Blurs */}
@@ -20,14 +21,23 @@ const Contact = () => {
           {/* Book Image */}
 
 
-          <div className="dark:bg-slate-900 dark:text-white dark:border">
-             <div className="flex justify-center pt-10 mb-10">
-            <img
-              src="https://tse1.mm.bing.net/th/id/OIP.n3sAXxDyR0gM6xT1ZwmXdQHaE8?pid=Api&P=0&h=180"
-              alt="Books"
-              className="w-64 rounded-xl shadow-lg"
-            />
-          </div>
+          <div className="dark:bg-slate-900 dark:text-white dark:border ">
+             <div  className="flex justify-center items-center gap-8 pt-10 mb-10 mt-8 gap-25">
+  <img
+    src="https://tse1.mm.bing.net/th/id/OIP.n3sAXxDyR0gM6xT1ZwmXdQHaE8?pid=Api&P=0&h=180"
+    alt="Books"
+    className="w-64 rounded-xl shadow-lg "
+  />
+
+  <img
+    src="https://tse1.mm.bing.net/th/id/OIP.n3sAXxDyR0gM6xT1ZwmXdQHaE8?pid=Api&P=0&h=180"
+    alt="Books"
+    className="w-64 rounded-xl shadow-lg"
+  />
+</div>
+          
+
+          
 
 
 

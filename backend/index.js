@@ -2,8 +2,13 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose";
+import cors from "cors";
+
+import bookRoute from "./route/book.route.js"
+
 
 const app = express();
+app.use(cors());
 dotenv.config();
 
 const PORT=process.env.PORT||4000;
@@ -19,6 +24,11 @@ try {
 } catch (error) {
   console.log("Error:", error);
 }
+
+
+//defining routes
+
+app.use("/book",bookRoute)
 
 
 
