@@ -48,8 +48,8 @@ function Banner() {
           <button className="btn btn-secondary">Secondary</button>
         </div>
 
-        <div className="order-1 w-full md:w-1/2">
-          <img src={banner} alt="" />
+        <div className="order-1 w-full md:w-1/2 ">
+          <img  src={banner} alt="" />
         </div>
       </div>
     </>

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import Login from "./Login";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [theme,setTheme] = useState(localStorage.getItem("theme")?
@@ -9,6 +10,8 @@ function Navbar() {
   const element = document.documentElement;
 
   useEffect(()=>{
+    // console.log("Theme =", theme);
+
     if(theme=="dark"){
       element.classList.add("dark");
       localStorage.setItem("theme","dark");
@@ -44,17 +47,20 @@ function Navbar() {
   const navItems = (
     <>
       <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/course">Course</a>
-      </li>
-      <li>
-        <a href="/contact">Contact</a>
-      </li>
-      <li>
-        <a href="/about">About</a>
-      </li>
+  <Link to="/">Home</Link>
+</li>
+
+<li>
+  <Link to="/course">Course</Link>
+</li>
+
+<li>
+  <Link to="/contact">Contact</Link>
+</li>
+
+<li>
+  <Link to="/about">About</Link>
+</li>
     </>
   );
   return (
@@ -106,7 +112,7 @@ ${sticky
                 {navItems}
               </ul>
             </div>
-            <a className="text-3xl font-bold cursor-pointer">bookStore</a>
+            <a className="text-5xl font-bold cursor-pointer">bookStore</a>
           </div>
 
           <div className="navbar-end space-x-3">
